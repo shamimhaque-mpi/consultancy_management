@@ -1,0 +1,218 @@
+*, *:before, *:after, h1, h2, h3, h4, h5, h6, p{
+    padding: 0;
+    margin: 0;
+}
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+.gride {
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    background: #f7f7f7;
+}
+.app-details {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    width: 100%;
+    text-align: center;
+    color: #c8fce7;
+    font-family: cursive;
+    z-index: 1;
+}
+.form-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 425px;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 1px 5px 15px -1px #ddd;
+    box-sizing: border-box;
+    padding: 45px 30px;
+}
+.msg {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 47px;
+    padding: 3px;
+    box-sizing: border-box;
+}
+.msg img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 7px;
+}
+.msg-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+.msg.warning {
+    background: #f57676;
+}
+.msg.success {
+    background: #64d0a5;
+}
+.msg::before {
+    content: '';
+}
+.success img {
+    object-position: -1px;
+}
+.warning img {
+    object-position: -41px;
+}
+.form-wrapper h2 {
+    text-align: center;
+    margin: 16px 0px;
+    margin-bottom: 23px;
+    font-family: fangsong;
+    color: #686767;
+}
+.form-group .form-link {
+    color: #58b691;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    padding: 10px 3px;
+    width: fit-content;
+    float: left;
+}
+.icon {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    margin: auto;
+}
+.icon img {
+    width: 100%;
+    height: 100%;
+}
+.form .form-group {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.form .form-group input[type='text'], .form .form-group input[type='password'] {
+    width: -webkit-fill-available;
+    padding: 13px 10px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    border-radius: 4px;
+    outline: none;
+}
+.form .form-group input[type='text']:focus, .form .form-group input[type='password']:focus {
+    outline: none;
+}
+.form-group button {
+    float: right;
+    padding: 12px 26px;
+    font-size: 16px;
+    font-family: fangsong;
+    background: #1abc9c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+}
+.wrapper.disabled .gride-1, .wrapper.disabled .archive {
+    opacity: 1;
+    transition: all 0.9s linear; 
+}
+.wrapper.disabled .archive, .wrapper.disabled input, .wrapper.disabled button, .wrapper.disabled a {
+    opacity: 0;
+    cursor: context-menu;
+}
+.wrapper.disabled .gride-2 {
+    background: #fff;
+    cursor: context-menu;
+}
+.wrapper.disabled .form-wrapper {
+    box-shadow: none;
+    cursor: context-menu;
+}
+.warning {
+    margin: auto;
+    max-width: 379px;
+    background: #f9e5d0;
+    border-left: 5px solid #f5ae64;
+    padding: 10px;
+    margin-top: 52px;
+    color: #8e775f;
+}
+
+
+@media screen and (max-width: 768px) {
+    .gride-1 {
+        width: 100%;
+    }
+    .gride-1 {
+        background: #16A085;
+    }
+    .radius-1, .radius-2 {
+        background: #16A085;
+        border: 46px solid #17ad8f;
+    }
+    .gride-2 {
+        width: 0;
+    }
+    .form-group .form-link {
+        font-size: 15px;
+    }
+    .icon {
+        width: 85px;
+        height: 85px;
+        margin-top: 15px;
+    }
+    .form-wrapper {
+        position: fixed;
+        width: 312px;
+        height: 385px;
+        box-shadow: none;
+        padding: 22px;
+        font-size: 14px;
+        z-index: 1;
+    }
+    .form-wrapper h2 {
+        margin: 8px 0px;
+        margin-bottom: 13px;
+    }
+    .msg-content {
+        font-size: 14px;
+    }
+    .app-details {
+        position: absolute;
+        left: 50%;
+        top: 70px;
+        transform: translateX(-50%);
+        font-size: 18px;
+    }
+    .app-details p {
+        display: none;
+    }
+    .form-group button {
+        background: #16A085;
+    }
+}
