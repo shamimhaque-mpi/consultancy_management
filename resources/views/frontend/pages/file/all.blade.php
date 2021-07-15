@@ -214,7 +214,7 @@
 
 
 	(()=>{
-		$('#tax_id').on('keydown', ()=>{
+		$('#tax_id').on('input', ()=>{
 			setTimeout(()=>{
 				var formdata = new FormData();
 				    formdata.append('tax_id', $('#tax_id').val());

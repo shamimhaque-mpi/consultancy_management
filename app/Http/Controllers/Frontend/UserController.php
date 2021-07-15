@@ -67,7 +67,7 @@ class UserController extends Controller
     		// AND REDIRECT TO ALL
     		return redirect()->route('user.customer.all');
     	}
-    	return view('frontend.pages.customer.Add');
+    	return view('frontend.pages.customer.add');
     }
 
     public function editCustomer(Request $request, $id){

@@ -50,14 +50,14 @@
 			<div class="row form-group">
 				<div class="col-md-2">First Name</div>
 				<div class="col-md-10">
-					<input type="text" name="first_name" value="{{old('first_name')}}" class="form-control">
+					<input type="text" name="first_name" value="{{old('first_name') ?? $customer->first_name}}" class="form-control">
 				</div>
 			</div>
 
 			<div class="row form-group">
 				<div class="col-md-2">Last Name</div>
 				<div class="col-md-10">
-					<input type="text" name="last_name" value="{{old('last_name')}}" class="form-control">
+					<input type="text" name="last_name" value="{{old('last_name') ?? $customer->last_name}}" class="form-control">
 				</div>
 			</div>
 		</div>
