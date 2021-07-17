@@ -154,13 +154,26 @@
 					</div>
 
 					<div class="form-group">
-						<label for="customer_type">Name</label>
+						<label for="customer_type">Type</label>
+						<input id="customer_type" class="form-control" readonly>
+					</div>
+
+					<div class="form-group d-none" id="is_company">
+						<label for="customer_type">Company Name</label>
 						<input id="customer_name" class="form-control" readonly>
 					</div>
 
-					<div class="form-group">
-						<label for="customer_type">Customer Type</label>
-						<input id="customer_type" class="form-control" readonly>
+					<div id="is_person" class="d-none">
+
+						<div class="form-group">
+							<label for="customer_type">First Name</label>
+							<input id="first_name" class="form-control" readonly>
+						</div>
+
+						<div class="form-group">
+							<label for="customer_type">Last Name</label>
+							<input id="last_name" class="form-control" readonly>
+						</div>
 					</div>
 
 			        <div class="row">
@@ -228,10 +241,22 @@
 				xhttp.onreadystatechange = function() {
 				    if (this.readyState == 4 && this.status == 200) {
 				    	var customer = JSON.parse(xhttp.responseText);
+
+				    	if(customer.type=='company'){
+				    		$('#is_person').addClass('d-none');
+				    		$('#is_company').removeClass('d-none');
+				    	}else if(customer.type=='person'){
+				    		$('#is_person').removeClass('d-none');
+				    		$('#is_company').addClass('d-none');
+				    	}
+
+
 				    	$('#customer_name').val((customer.type != "company" ? customer.customer_name : customer.company_name));
 				    	$('#customer_type').val(customer.type);
 				    	$('#telephone').val(customer.telephone);
 				    	$('#date_of_birth').val(customer.date_of_birth);
+				    	$('#first_name').val(customer.first_name);
+				    	$('#last_name').val(customer.last_name);
 
 				    	if(Object.values(customer).length > 0){
 				    		$('#tax_id').css('border-color', 'green');
